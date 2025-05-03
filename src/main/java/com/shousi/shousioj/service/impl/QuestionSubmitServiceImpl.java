@@ -7,6 +7,7 @@ import com.shousi.shousioj.common.ErrorCode;
 import com.shousi.shousioj.constant.CommonConstant;
 import com.shousi.shousioj.exception.BusinessException;
 import com.shousi.shousioj.exception.ThrowUtils;
+import com.shousi.shousioj.judge.JudgeService;
 import com.shousi.shousioj.mapper.QuestionSubmitMapper;
 import com.shousi.shousioj.model.dto.questionsubmit.QuestionSubmitAddRequest;
 import com.shousi.shousioj.model.dto.questionsubmit.QuestionSubmitQueryRequest;
@@ -23,10 +24,12 @@ import com.shousi.shousioj.utils.SqlUtils;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 /**
@@ -43,6 +46,10 @@ public class QuestionSubmitServiceImpl extends ServiceImpl<QuestionSubmitMapper,
 
     @Resource
     private UserService userService;
+
+    @Resource
+    @Lazy
+    private JudgeService judgeService;
 
     @Override
     public long doQuestionSubmit(QuestionSubmitAddRequest questionSubmitAddRequest, User loginUser) {
@@ -68,7 +75,13 @@ public class QuestionSubmitServiceImpl extends ServiceImpl<QuestionSubmitMapper,
         if (!save) {
             throw new BusinessException(ErrorCode.OPERATION_ERROR);
         }
-        return questionSubmit.getId();
+        // 异步执行判题服务
+        Long questionSubmitId = questionSubmit.getId();
+        CompletableFuture.runAsync(() -> {
+            judgeService.doJudge(questionSubmitId);
+        });
+        return questionSubmitId;
+
     }
 
     /**

@@ -6,6 +6,7 @@ import com.shousi.shousioj.common.ErrorCode;
 import com.shousi.shousioj.common.ResultUtils;
 import com.shousi.shousioj.exception.BusinessException;
 import com.shousi.shousioj.exception.ThrowUtils;
+import com.shousi.shousioj.judge.JudgeService;
 import com.shousi.shousioj.model.dto.questionsubmit.QuestionSubmitAddRequest;
 import com.shousi.shousioj.model.dto.questionsubmit.QuestionSubmitQueryRequest;
 import com.shousi.shousioj.model.entity.QuestionSubmit;
@@ -38,9 +39,8 @@ public class QuestionSubmitController {
         }
         // 登录才能提交
         User loginUser = userService.getLoginUser(request);
-        Long questionId = questionSubmitAddRequest.getQuestionId();
-        questionSubmitService.doQuestionSubmit(questionSubmitAddRequest, loginUser);
-        return ResultUtils.success(questionId);
+        long questionSubmitId = questionSubmitService.doQuestionSubmit(questionSubmitAddRequest, loginUser);
+        return ResultUtils.success(questionSubmitId);
     }
 
     @PostMapping("/list/page/vo")
