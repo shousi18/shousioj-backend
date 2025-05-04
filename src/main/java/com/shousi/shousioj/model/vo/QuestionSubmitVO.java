@@ -1,7 +1,7 @@
 package com.shousi.shousioj.model.vo;
 
 import cn.hutool.json.JSONUtil;
-import com.shousi.shousioj.model.dto.questionsubmit.JudgeInfo;
+import com.shousi.shousioj.judge.codesandox.model.JudgeInfo;
 import com.shousi.shousioj.model.entity.QuestionSubmit;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;

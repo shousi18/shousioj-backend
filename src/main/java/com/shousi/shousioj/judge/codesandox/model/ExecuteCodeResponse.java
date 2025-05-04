@@ -1,6 +1,5 @@
 package com.shousi.shousioj.judge.codesandox.model;
 
-import com.shousi.shousioj.model.dto.questionsubmit.JudgeInfo;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

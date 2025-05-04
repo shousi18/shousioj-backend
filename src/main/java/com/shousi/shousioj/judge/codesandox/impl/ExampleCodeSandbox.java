@@ -3,7 +3,7 @@ package com.shousi.shousioj.judge.codesandox.impl;
 import com.shousi.shousioj.judge.codesandox.CodeSandbox;
 import com.shousi.shousioj.judge.codesandox.model.ExecuteCodeRequest;
 import com.shousi.shousioj.judge.codesandox.model.ExecuteCodeResponse;
-import com.shousi.shousioj.model.dto.questionsubmit.JudgeInfo;
+import com.shousi.shousioj.judge.codesandox.model.JudgeInfo;
 import com.shousi.shousioj.model.enums.JudgeInfoMessageEnum;
 import com.shousi.shousioj.model.enums.QuestionSubmitStatusEnum;
 

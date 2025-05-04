@@ -4,7 +4,7 @@ import com.shousi.shousioj.judge.strategy.DefaultJudgeStrategy;
 import com.shousi.shousioj.judge.strategy.JavaLanguageJudgeStrategy;
 import com.shousi.shousioj.judge.strategy.JudgeContext;
 import com.shousi.shousioj.judge.strategy.JudgeStrategy;
-import com.shousi.shousioj.model.dto.questionsubmit.JudgeInfo;
+import com.shousi.shousioj.judge.codesandox.model.JudgeInfo;
 import com.shousi.shousioj.model.entity.QuestionSubmit;
 import org.springframework.stereotype.Service;
 

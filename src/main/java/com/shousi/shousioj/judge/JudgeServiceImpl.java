@@ -11,7 +11,7 @@ import com.shousi.shousioj.judge.codesandox.model.ExecuteCodeRequest;
 import com.shousi.shousioj.judge.codesandox.model.ExecuteCodeResponse;
 import com.shousi.shousioj.judge.strategy.JudgeContext;
 import com.shousi.shousioj.model.dto.question.JudgeCase;
-import com.shousi.shousioj.model.dto.questionsubmit.JudgeInfo;
+import com.shousi.shousioj.judge.codesandox.model.JudgeInfo;
 import com.shousi.shousioj.model.entity.Question;
 import com.shousi.shousioj.model.entity.QuestionSubmit;
 import com.shousi.shousioj.model.enums.QuestionSubmitStatusEnum;

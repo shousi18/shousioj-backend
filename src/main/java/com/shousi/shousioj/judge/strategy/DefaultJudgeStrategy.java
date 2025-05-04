@@ -3,7 +3,7 @@ package com.shousi.shousioj.judge.strategy;
 import cn.hutool.json.JSONUtil;
 import com.shousi.shousioj.model.dto.question.JudgeCase;
 import com.shousi.shousioj.model.dto.question.JudgeConfig;
-import com.shousi.shousioj.model.dto.questionsubmit.JudgeInfo;
+import com.shousi.shousioj.judge.codesandox.model.JudgeInfo;
 import com.shousi.shousioj.model.entity.Question;
 import com.shousi.shousioj.model.enums.JudgeInfoMessageEnum;
 

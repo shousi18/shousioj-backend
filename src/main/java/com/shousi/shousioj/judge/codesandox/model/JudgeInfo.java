@@ -1,4 +1,4 @@
-package com.shousi.shousioj.model.dto.questionsubmit;
+package com.shousi.shousioj.judge.codesandox.model;
 
 import lombok.Data;
 
